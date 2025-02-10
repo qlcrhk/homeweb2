@@ -1,0 +1,14 @@
+스키마 정보
+
+유저 정보
+- email
+- password
+- isAdmin 관리자 확인
+
+매물모델
+- title (이름)
+- description (설명)
+- price(가격)
+- location(위치)
+- images(이미지 url로 입력 그리고 최대 4개)
+- createAt(등록일자)

@@ -1,0 +1,106 @@
+/* 기본 스타일 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+/* 고정 요약 바 */
+.detail-title{
+    display: flex;
+    justify-content: space-between  ;
+    align-items: center;
+}
+.like-btn {
+    background: red;
+    color: white;
+    border: none;
+    height: 30px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* 전체 컨테이너 */
+.container {
+    max-width: 800px;
+    margin: 100px auto 50px;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* 이미지 갤러리 */
+.image-gallery {
+    text-align: center;
+}
+
+#main-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.thumbnail-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.2s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+}
+
+/* 상세 정보 */
+.property-details {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 옵션 및 리뷰 */
+.info-sections {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.info-card {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.info-card:hover {
+    transform: scale(1.05);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 600px) {
+    .thumbnail-container {
+        flex-direction: column;
+    }
+    .info-sections {
+        flex-direction: column;
+    }
+}
