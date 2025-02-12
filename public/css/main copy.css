@@ -34,7 +34,7 @@ header {}
     width: 50%;
     height: 100%;
     right: 0;
-    background: url(/homeweb2/images/home.jpg) no-repeat center bottom/ cover;
+    background: url(/images/home.jpg) no-repeat center bottom/ cover;
 }
 
 .hero-content h2 {
@@ -401,7 +401,7 @@ header {}
     .hero-section {
         width: 100%;
         z-index: 997;
-        background: url(/homeweb2/images/home.jpg) no-repeat center center / cover;
+        background: url(/images/home.jpg) no-repeat center center / cover;
     }
 
     .hero-section::before {
