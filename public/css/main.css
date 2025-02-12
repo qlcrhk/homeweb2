@@ -1,49 +1,53 @@
 /* Main Content Styles */
+header {}
+
 .main-content {
-    max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    margin: 0 5%;
 }
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(rgb(74, 183, 255), #007bff), url('/api/placeholder/1200/400');
+    background: linear-gradient(110deg, #00AC47, #017130), url('/api/placeholder/1200/400');
     background-size: cover;
     background-position: center;
     position: relative;
-    height: 400px;
+    height: 50vh;
     display: flex;
-    /* align-items: center; */
-    /* justify-content: center; */
-    /* text-align: center; */
+    margin-top: 36px;
     margin-bottom: 60px;
     border-radius: 8px;
+    overflow: hidden;
 }
 
 .hero-content {
     position: absolute;
-    left: 10%;
-    top: 30%;
+    left: 5%;
+    top: 15%;
     color: white;
     padding: 20px;
 }
 
-.main-img-area{
+.main-img-area {
     position: absolute;
     width: 50%;
     height: 100%;
-    right: 5%;
-    bottom: -30px;
-    min-width: 400px;
-    background: url(/images/home.png) no-repeat center / contain;
-    background: url(/public/images/home.png) no-repeat center / contain;
-    scale: 0.7;
+    right: 0;
+    background: url(/images/home.jpg) no-repeat center bottom/ cover;
 }
 
 .hero-content h2 {
-    font-size: 36px;
+    font-size: 3em;
     margin-bottom: 20px;
+    padding-bottom: 1em;
 }
+
+.hero-content a {
+    font-size: 1.3em;
+    color: #fff;
+}
+
 
 .search-bar {
     display: flex;
@@ -130,19 +134,37 @@
 .property-info .location {
     color: #495057;
 }
-
-.development-info .label {
-    color: #6c757d;
-}
-
-.development-info .value {
-    font-weight: 500;
-}
-
-/* 회사 정보 섹션 스타일 */
+/* 분양 및 부동산 정보 */
 .company-info {
     padding: 60px 0;
     background-color: #f8f9fa;
+}
+
+.section-header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+.featured-properties h3{
+    text-align: center;
+}
+
+.featured-properties h3, .section-header h3 {
+    font-size: 28px;
+    color: #212529;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.featured-properties h3::after, .section-header h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #00AC47;
 }
 
 .company-container {
@@ -152,39 +174,43 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
+    align-items: start;
 }
 
 .office-map {
-    border-radius: 8px;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .location-map {
     width: 100%;
     height: 100%;
+    min-height: 400px;
     object-fit: cover;
+    vertical-align: middle;
 }
 
 .contact-info {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
 .info-group {
-    background-color: white;
-    padding: 24px;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
 }
 
 .info-group h4 {
-    font-size: 18px;
-    color: #007bff;
-    margin-bottom: 20px;
+    font-size: 20px;
+    color: #00AC47;
+    margin: 25px 0 15px;
     padding-bottom: 10px;
     border-bottom: 2px solid #e9ecef;
+}
+
+.info-group h4:first-child {
+    margin-top: 0;
 }
 
 .info-group ul {
@@ -194,98 +220,163 @@
 }
 
 .info-group ul li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
+}
+
+.info-group p {
+    margin: 5px 0;
+    color: #495057;
     line-height: 1.6;
 }
 
 .info-group .label {
+    display: inline-block;
+    width: 80px;
     color: #6c757d;
     font-weight: 500;
 }
 
 .info-group .value {
     color: #212529;
-}
-
-.address p {
-    margin-bottom: 8px;
-    line-height: 1.6;
-}
-
-.transport {
-    margin-top: 15px;
-    font-size: 14px;
-    color: #6c757d;
-}
-
-.transport span {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.transport .subway::before {
-    content: "🚇";
-    margin-right: 8px;
-}
-
-.transport .bus::before {
-    content: "🚌";
-    margin-right: 8px;
-}
-
-.business-hours .day {
     font-weight: 500;
-    color: #495057;
 }
 
-.business-hours .time {
+.info-group .day {
+    display: inline-block;
+    width: 100px;
+    color: #495057;
+    font-weight: 500;
+}
+
+.info-group .time {
     color: #212529;
 }
 
+.new-development {
+    background-color: #f8f9fa;
+    padding: 60px 0;
+  }
+  
+  .development-flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .development-card {
+    display: flex;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+  
+  .development-img {
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+  }
+  
+  .development-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .development-info {
+    flex: 1;
+    padding: 30px;
+  }
+  
+  .development-info h4 {
+    font-size: 24px;
+    color: #212529;
+    margin: 0 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #e9ecef;
+  }
+  
+  .location {
+    color: #6c757d;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .details {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 25px;
+  }
+  
+  .details li {
+    margin-bottom: 15px;
+  }
+  
+  .development-status {
+    display: inline-block;
+    background-color: #00AC47;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
 /* 반응형 스타일 */
-@media (max-width: 1024px) {
+
+/* Responsive Styles */
+@media (max-width: 1240px) {
+    .hero-section {
+        height: 40vh;
+    }
+
+    .hero-content h2 {
+        font-size: 2em;
+    }
+
+    .hero-content a {
+        font-size: 1em;
+    }
+
+
+    .search-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        width: 100%;
+        border-radius: 4px;
+    }
+
+}
+
+@media (max-width: 992px) {
+    .development-card {
+        flex-direction: column;
+      }
+      
+      .development-img {
+        width: 100%;
+        height: 250px;
+      }
+    
     .company-container {
         grid-template-columns: 1fr;
     }
 
     .office-map {
-        height: 400px;
+        min-height: 300px;
+    }
+
+    .location-map {
+        min-height: 300px;
     }
 }
 
-@media (max-width: 768px) {
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-
-    .office-map {
-        height: 300px;
-    }
-
-    .info-group {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .info-group ul li {
-        flex-direction: column;
-        margin-bottom: 15px;
-    }
-
-    .info-group .label {
-        margin-bottom: 5px;
-    }
-}
-
-/* 반응형 스타일 */
-
-/* Responsive Styles */
 @media (max-width: 768px) {
     .hero-section {
-        height: 300px;
+        height: 30vh;
     }
 
     .hero-content h2 {
@@ -306,4 +397,75 @@
     .property-grid {
         grid-template-columns: 1fr;
     }
+
+    .hero-section {
+        width: 100%;
+        z-index: 997;
+        background: url(/images/home.jpg) no-repeat center center / cover;
+    }
+
+    .hero-section::before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: #00000050;
+    }
+
+    .hero-section .main-img-area{
+        display: none;
+    }
+
+    .hero-section h2 {
+        z-index: 999;
+    }
+
+    .main-content {
+        margin: 0 auto;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .company-info {
+        padding: 40px 0;
+    }
+
+    .section-header {
+        margin-bottom: 30px;
+    }
+
+    .section-header h3 {
+        font-size: 24px;
+    }
+
+    .info-group {
+        padding: 20px;
+    }
+    
+}
+
+@media (max-width: 576px) {
+    .info-group ul li {
+        margin-bottom: 20px;
+    }
+
+    .info-group .label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .info-group .day {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .development-info {
+        padding: 20px;
+      }
+      
+      .development-info h4 {
+        font-size: 20px;
+      }
 }
