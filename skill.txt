@@ -1,24 +1,11 @@
-skill
-
-back-end
-
 node.js
+express
+cors
 jsonwebtoken 로그인 위한 라이브러리
 bcryptjs 비밀번호 암호화 및 검증
-
-
-database
+passport
 mongoDB
-
-front-end
-
 html / css / js
-
-
-기타
-
-jwt 비밀번호 암호화 참고사이트
-https://www.base64decode.org/ko/
 
 사용 ai 도구
 

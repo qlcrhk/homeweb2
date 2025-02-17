@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>문의하기</title>
+
+    <link rel="stylesheet" href="/css/navAndFooter.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/question.css">
+
+    <script type="module" src="/js/auth.js"></script>
+    <script type="module" src="/js/login.js"></script>
+    <script type="module" src="/js/nav.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo"><a href="/">비둘기부동산</a></h1>
+
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-container">
+        <nav class="gnb">
+          <h2 class="hidden">메인메뉴</h2>
+          <ul>
+            <li><a href="/property-search">매물찾기</a></li>
+            <li><a href="">분양</a></li>
+            <li><a href="">커뮤니티</a></li>
+            <li><a href="/question">문의하기</a></li>
+            <li id="admin-menu" style="display: none">
+              <a href="/property-upload">매물 등록</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="lnb">
+          <h2 class="hidden">로컬 메뉴</h2>
+          <ul>
+            <li>
+              <div class="login-container">
+                <p id="user-info">로그인 정보를 불러오는 중...</p>
+              </div>
+            </li>
+
+            <li><a href="" class="my-page">MyPage</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <!-- 계약 진행 방식 설명 -->
+        <div class="info-box">
+          <h2>📌 계약 진행 방식 안내</h2>
+          <p>문의 접수 후, 구매자 및 판매자에게 각각 안내가 진행됩니다.</p>
+          <p>
+            <strong>판매자의 경우</strong> 문의를 확인하면 문자로 진행 상황이
+            전달됩니다.
+          </p>
+        </div>
+
+        <!-- 구매자 문의 -->
+        <a href="https://naver.me/G589gKxG" class="inquiry-link">
+          <div class="buyer">
+            <p>📩 구매자 문의하기</p>
+            <p>구매자 네이버 폼 바로가기</p>
+          </div>
+        </a>
+
+        <!-- 판매자 문의 -->
+        <a href="https://naver.me/G589gKxG" class="inquiry-link">
+          <div class="seller">
+            <p>📩 판매자 문의하기</p>
+            <p>판매자 네이버 폼 바로가기</p>
+          </div>
+        </a>
+      </div>
+    </main>
+    <footer>
+      <div class="t-footer-content">
+        <div class="t-link-list">
+          <ul>
+            <li>
+              <div class="t-btn-item">
+                <button
+                  type="button"
+                  class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--variant-elevated"
+                >
+                  <span class="v-btn__overlay"></span
+                  ><span class="v-btn__underlay"></span
+                  ><!----><span class="v-btn__content" data-no-activator=""
+                    ><span>회사소개</span></span
+                  ><!----><!---->
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="t-btn-item">
+                <button
+                  type="button"
+                  class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--variant-elevated"
+                >
+                  <span class="v-btn__overlay"></span
+                  ><span class="v-btn__underlay"></span
+                  ><!----><span class="v-btn__content" data-no-activator=""
+                    ><span>이용약관</span></span
+                  ><!----><!---->
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="t-btn-item">
+                <button
+                  type="button"
+                  class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--variant-elevated"
+                >
+                  <span class="v-btn__overlay"></span
+                  ><span class="v-btn__underlay"></span
+                  ><!----><span class="v-btn__content" data-no-activator=""
+                    ><span>개인정보처리방침</span></span
+                  ><!----><!---->
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="t-btn-item">
+                <button
+                  type="button"
+                  class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--variant-elevated"
+                >
+                  <span class="v-btn__overlay"></span
+                  ><span class="v-btn__underlay"></span
+                  ><!----><span class="v-btn__content" data-no-activator=""
+                    ><span>위치기반서비스 이용약관</span></span
+                  ><!----><!---->
+                </button>
+              </div>
+            </li>
+
+            <li>
+              <div class="t-btn-item">
+                <button
+                  type="button"
+                  class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--variant-elevated"
+                >
+                  <span class="v-btn__overlay"></span
+                  ><span class="v-btn__underlay"></span
+                  ><!----><span class="v-btn__content" data-no-activator=""
+                    ><span>매물광고자율규약</span></span
+                  ><!----><!---->
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="t-btn-item">
+                <button
+                  type="button"
+                  class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--variant-elevated"
+                >
+                  <span class="v-btn__overlay"></span
+                  ><span class="v-btn__underlay"></span
+                  ><!----><span class="v-btn__content" data-no-activator=""
+                    ><span>책임한계 및 법적고지</span></span
+                  ><!----><!---->
+                </button>
+              </div>
+            </li>
+            <li>
+              <div class="t-btn-item">
+                <button
+                  type="button"
+                  class="v-btn v-btn--elevated v-theme--light v-btn--density-default v-btn--variant-elevated"
+                >
+                  <span class="v-btn__overlay"></span
+                  ><span class="v-btn__underlay"></span
+                  ><!----><span class="v-btn__content" data-no-activator=""
+                    ><span>제휴문의</span></span
+                  ><!----><!---->
+                </button>
+              </div>
+            </li>
+          </ul>
+        </div>
+        <div class="t-footer-company">
+          <div class="t-address">
+            <p>(주) 포트폴리오 제작</p>
+            <span>대표이사 : 박성윤</span
+            ><span>사업자 등록번호 : 123-1234-1234</span
+            ><span>통신판매업 신고 : 제2050-서울강남구-9999호</span>
+            <p>주소 : 서울 강남구 강남동 강남빌딩스</p>
+          </div>
+          <div class="t-family-site">
+            <strong class="logo">살려줘부동산</strong>
+            <div>
+              <div class="t-select-item">
+                <div
+                  class="v-input v-input--horizontal v-input--density-default v-input--readonly v-text-field v-select v-select--single"
+                >
+                  <!---->
+                  <div class="v-input__control">
+                    <div
+                      class="v-field v-field--appended v-field--single-line v-field--variant-outlined v-theme--light v-locale--is-ltr"
+                      role="textbox"
+                      aria-haspopup="menu"
+                      aria-expanded="false"
+                      aria-owns="v-menu-67"
+                    >
+                      <div class="v-field__overlay"></div>
+                      <div class="v-field__loader">
+                        <div
+                          class="v-progress-linear v-theme--light v-locale--is-ltr"
+                          role="progressbar"
+                          aria-hidden="true"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                          style="
+                            top: 0px;
+                            height: 0px;
+                            --v-progress-linear-height: 2px;
+                            left: 50%;
+                            transform: translateX(-50%);
+                          "
+                        >
+                          <!---->
+                          <div
+                            class="v-progress-linear__background"
+                            style="width: 100%"
+                          ></div>
+                          <div class="v-progress-linear__indeterminate">
+                            <div
+                              class="v-progress-linear__indeterminate long"
+                            ></div>
+                            <div
+                              class="v-progress-linear__indeterminate short"
+                            ></div>
+                          </div>
+                          <!---->
+                        </div>
+                      </div>
+                      <!---->
+
+                      <div class="v-field__append-inner">
+                        <!----><i
+                          class="mdi-menu-down mdi v-icon notranslate v-theme--light v-icon--size-default"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="v-field__outline">
+                        <div class="v-field__outline__start"></div>
+                        <!---->
+                        <div class="v-field__outline__end"></div>
+                        <!---->
+                      </div>
+                    </div>
+                  </div>
+                  <!---->
+                  <div class="v-input__details">
+                    <div
+                      class="v-messages"
+                      role="alert"
+                      aria-live="polite"
+                      id="input-65-messages"
+                    ></div>
+                    <!---->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="t-customer">
+          <span>광고·가입문의 : 12-1234-1234</span
+          ><span>고객센터 : 12-1234-1234</span
+          ><span class="time"
+            >평일 09:00 ~ 18:00(토·일요일, 공휴일 휴무/ 점심시간 : 12:00 ~
+            13:00)</span
+          >
+        </p>
+        <p class="t-copyright">
+          &copy;Copyright @ <b>helpBudongsan</b> All Rights Reserved.
+        </p>
+      </div>
+    </footer>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 id="modal-title">제목</h2>
+        <p id="modal-body">내용</p>
+      </div>
+    </div>
+  </body>
+</html>

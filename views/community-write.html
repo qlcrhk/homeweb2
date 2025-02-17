@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 작성</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <header>
+        <h1>게시글 작성</h1>
+    </header>
+    <main>
+        <form id="writeForm" method="POST">
+            <label for="title">제목:</label>
+            <input type="text" id="title" name="title" required maxlength="100">
+            
+            <label for="content">내용:</label>
+            <textarea id="content" name="content" rows="10" required maxlength="1000"></textarea>
+            
+            <button type="submit">작성 완료</button>
+        </form>
+    </main>
+</body>
+</html>

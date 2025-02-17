@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>게시글 수정</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>게시글 수정</h1>
+    <form id="editForm">
+        <input type="hidden" id="postId">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title" required>
+        <label for="content">내용:</label>
+        <textarea id="content" name="content" required></textarea>
+        <button type="submit">수정 완료</button>
+    </form>
+    <script type="module" src="/js/community-edit.js"></script>
+</body>
+</html>

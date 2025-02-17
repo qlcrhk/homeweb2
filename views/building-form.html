@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>분양 건물 등록</title>
+  <link rel="stylesheet" href="/public/css/common.css">
+  <link rel="stylesheet" href="/public/css/building-form.css">
+</head>
+<body>
+  <div class="form-container">
+    <h2>분양 건물 등록</h2>
+    <form id="building-form">
+      <label for="name">건물명</label>
+      <input type="text" id="name" required>
+
+      <label for="location">위치</label>
+      <input type="text" id="location" required>
+
+      <label for="price">분양가 (₩)</label>
+      <input type="number" id="price" required>
+
+      <label for="area">면적 (㎡)</label>
+      <input type="number" id="area" required>
+
+      <label for="type">건물 유형</label>
+      <select id="type" required>
+        <option value="아파트">아파트</option>
+        <option value="오피스텔">오피스텔</option>
+        <option value="주택">주택</option>
+        <option value="상업용 건물">상업용 건물</option>
+      </select>
+
+      <label for="completion-date">완공 예정일</label>
+      <input type="date" id="completion-date" required>
+
+      <label for="image">이미지 업로드</label>
+      <input type="file" id="image" accept="image/*">
+
+      <button type="submit">등록하기</button>
+    </form>
+
+    <p id="message"></p>
+  </div>
+
+  <script src="/js/building-form.js"></script>
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modal-title">제목</h2>
+      <p id="modal-body">내용</p>
+    </div>
+  </div>
+  <script src="/js/nav.js"></script>
+</body>
+</html>

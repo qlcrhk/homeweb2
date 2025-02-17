@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>지도 생성하기</title>
+    <script
+      type="text/javascript"
+      src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a96e8c7f34118ee8663f576a32bc302"
+    ></script>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/navAndFooter.css" />
+    <link rel="stylesheet" href="/css/map.css" />
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/login.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="logo"><a href="/">비둘기부동산</a></h1>
+
+      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-container">
+        <nav class="gnb">
+          <h2 class="hidden">메인메뉴</h2>
+          <ul>
+            <li><a href="/property-search">매물찾기</a></li>
+            <li><a href="">분양</a></li>
+            <li><a href="">커뮤니티</a></li>
+            <li><a href="/question">문의하기</a></li>
+            <li id="admin-menu" style="display: none">
+              <a href="/property-upload">매물 등록</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="lnb">
+          <h2 class="hidden">로컬 메뉴</h2>
+          <ul>
+            <li>
+              <div class="login-container">
+                <p id="user-info">로그인 정보를 불러오는 중...</p>
+              </div>
+            </li>
+
+            <li><a href="" class="my-page">MyPage</a></li>
+          </ul>
+        </nav>
+      </div>
+      <script type="text/javascript" src="/js/login.js"></script>
+    </header>
+
+    <main>
+      <section>
+        <h2 class="hidden">매물찾기</h2>
+
+        <div class="map-container">
+          <div id="sidebar">
+            <div class="search-bar">
+              <select id="propertyType">
+                <option value="all">전체</option>
+                <option value="아파트">아파트</option>
+                <option value="상가">상가</option>
+                <option value="원룸">원룸</option>
+              </select>
+              <button id="searchBtn">검색</button>
+            </div>
+            <ul id="propertyList" class="property-list"></ul>
+          </div>
+          <!-- 지도를 표시할 div 입니다 -->
+          <div id="map" style="width: 100%; height: 100vh"></div>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="/js/map.js"></script>
+  </body>
+</html>

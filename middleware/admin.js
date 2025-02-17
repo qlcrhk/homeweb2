@@ -1,11 +1,12 @@
-// 관리자 확인 미들웨어
+const authenticate = require("./auth");
 
-const adminCheck = (req, res, next) => {
-    if (!req.user || !req.user.isAdmin) {
-      return res.status(403).json({ message: '관리자 권한이 필요합니다.' });
+const adminOnly = (req, res, next) => {
+  authenticate(req, res, () => {
+    if (!req.user.isAdmin) {
+      return res.status(403).json({ message: "관리자 권한이 필요합니다." });
     }
     next();
-  };
-  
-  module.exports = adminCheck;
-  
+  });
+};
+
+module.exports = adminOnly;

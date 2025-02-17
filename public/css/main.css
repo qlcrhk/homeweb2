@@ -1,471 +1,581 @@
-/* Main Content Styles */
-header {}
-
-.main-content {
-    margin: 0 auto;
-    padding: 20px;
-    margin: 0 5%;
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
 }
 
-/* Hero Section */
-.hero-section {
-    background: linear-gradient(110deg, #00AC47, #017130), url('/api/placeholder/1200/400');
-    background-size: cover;
-    background-position: center;
+h1,h2,h3,h4,h5,h6 {
+    font-family: 'Pretendard-Regular', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 메인 배너 */
+
+.hero-container{
+    width: 100%;
+    height: 800px;
     position: relative;
-    height: 50vh;
-    display: flex;
-    margin-top: 36px;
-    margin-bottom: 60px;
-    border-radius: 8px;
     overflow: hidden;
 }
 
-.hero-content {
-    position: absolute;
-    left: 5%;
-    top: 15%;
-    color: white;
-    padding: 20px;
-}
-
-.main-img-area {
+.hero-img-wrap{
     position: absolute;
     width: 50%;
     height: 100%;
+    top: 0;
+    background: url(../images/sky.jpg) no-repeat center / cover;
+    overflow: hidden;
+    border-radius: 40% 0 0 0;
     right: 0;
-    background: url(/homeweb2/images/home.jpg) no-repeat center bottom/ cover;
+    box-shadow: 10px 10px 20px inset #0007;
 }
 
-.hero-content h2 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    padding-bottom: 1em;
-}
-
-.hero-content a {
-    font-size: 1.3em;
-    color: #fff;
-}
-
-
-.search-bar {
-    display: flex;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-.search-bar input {
-    flex: 1;
-    padding: 15px;
-    border: none;
-    border-radius: 4px 0 0 4px;
-    font-size: 16px;
-}
-
-.search-bar button {
-    padding: 15px 30px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0 4px 4px 0;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.search-bar button:hover {
-    background-color: #0056b3;
-}
-
-/* Featured Properties */
-.featured-properties {
-    margin-bottom: 60px;
-}
-
-.featured-properties h3 {
-    font-size: 24px;
-    margin-bottom: 30px;
-}
-
-.property-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.property-card {
-    border: 1px solid #dee2e6;
-    border-radius: 8px;
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.property-card:hover {
-    transform: translateY(-5px);
-}
-
-.property-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.property-info {
-    padding: 20px;
-}
-
-.property-info h4 {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.property-info .price {
-    color: #007bff;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.property-info .details {
-    color: #6c757d;
-    margin-bottom: 5px;
-}
-
-.property-info .location {
-    color: #495057;
-}
-/* 분양 및 부동산 정보 */
-.company-info {
-    padding: 60px 0;
-    background-color: #f8f9fa;
-}
-
-.section-header {
-    margin-bottom: 40px;
-    text-align: center;
-}
-.featured-properties h3{
-    text-align: center;
-}
-
-.featured-properties h3, .section-header h3 {
-    font-size: 28px;
-    color: #212529;
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.featured-properties h3::after, .section-header h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 60px;
-    height: 3px;
-    background-color: #00AC47;
-}
-
-.company-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.office-map {
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-}
-
-.location-map {
+.hero-img{
     width: 100%;
     height: 100%;
-    min-height: 400px;
-    object-fit: cover;
-    vertical-align: middle;
+    background: url(../images/building2.png) no-repeat left bottom -200px / cover;
+    transform-origin: bottom left;
+    opacity: 0;
+    transform: translateY(20%);
+    animation: fadeUp 0.5s ease-out forwards;
 }
 
-.contact-info {
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.hero-text-wrap{
+    width: 50%;
+    position: absolute;
+    top: 30%;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-150px);
+    animation: slideRight 0.5s ease-out forwards;
+    animation-delay: 0.5s; /* 살짝 딜레이 줘서 자연스럽게 */
+}
+.hero-text-wrap div{
 }
 
-.info-group {
+.hero-text-wrap h2{
+    font-size: 4em;
+    font-weight: 900;
+}
+
+.hero-text-wrap p{
+
+    font-size: 2em;
+    color: #707070;
+    padding: 1em 0 3em 0;
+}
+
+.hero-text-wrap a{
+    font-size: 1.5em;
+}
+.delete-el{
+    display: none;
+}
+
+/* Reset and Base Styles */
+.found-product-section {
+    padding: 150px 0px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.found-product-container {
+    max-width: 1480px;
+    margin: 0 auto;
+    padding:0 20px;
+}
+
+.found-product-container h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2.5em;
+    color: #333;
+    position: relative;
+}
+
+/* Grid Layout */
+.product-wrap ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Card Design */
+.product-card {
+    position: relative;
+    height: 320px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    filter: grayscale(100%); /* 기본적으로 회색(흑백) 처리 */
+}
+
+/* Dynamic Backgrounds */
+.product-card:nth-child(1) {
+    background: url(../images/studio.jpg) no-repeat center/cover;
+}
+
+.product-card:nth-child(2) {
+    background: url(../images/apartment.jpg) no-repeat center/cover;
+}
+
+.product-card:nth-child(3) {
+    background: url(../images/house.jpg) no-repeat center/cover;
+}
+
+.product-card:nth-child(4) {
+    background: url(../images/factory.jpg) no-repeat center/cover;
+}
+
+.product-card a {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-decoration: none;
     padding: 30px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0) 60%);
+    transition: all 0.3s ease;
 }
 
-.info-group h4 {
-    font-size: 20px;
-    color: #00AC47;
-    margin: 25px 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e9ecef;
+.product-card h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    transform: translateY(20px);
+    opacity: 0.9;
+    transition: all 0.3s ease 0.1s;
 }
 
-.info-group h4:first-child {
-    margin-top: 0;
+.product-card p {
+    font-size: 1rem;
+    line-height: 1.4;
+    max-width: 90%;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: all 0.3s ease 0.2s;
 }
 
-.info-group ul {
+/* Hover Effects */
+.product-card:hover {
+    transform: translateY(-10px);
+    filter: grayscale(0%);
+
+}
+
+
+.product-card:hover h3,
+.product-card:hover p {
+    transform: translateY(-10px);
+    opacity: 1;
+}
+
+/* Button Effect */
+.product-card::after {
+    content: '자세히 보기 →';
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.product-card:hover::after {
+    opacity: 1;
+    right: 25px;
+}
+
+/* 광고 */
+.advertisement-section{
+    padding: 50px 0px;
+}
+.advertisement{
+    width: 55%;
+    height: 120px;
+    margin: 0 auto;
+    background: url(../images/adver1.png) no-repeat center center / cover;
+    border-radius: 10px;
+
+    font-size: 1.5em;
+}
+
+/* 분양 매물 전체 스타일 */
+.sale-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  }
+  
+  .sale-container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .sale-container h2 {
+    text-align: center;
+    padding-bottom: 1em;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #333;
+    position: relative;
+  }
+  
+  .sale-list {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* 카드 간격 */
+  }
+  
+  /* 개별 매물 카드 */
+  .sale-card {
+    display: flex;
+    align-items: center;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .sale-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  /* 이미지 스타일 */
+  .sale-img {
+    width: 250px;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+    margin-right: 20px;
+  }
+  
+  /* 텍스트 정보 */
+  .sale-info {
+    padding: 20px;
+    flex: 1;
+  }
+  
+  .sale-info h3 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  
+  .sale-info ul {
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.info-group ul li {
-    margin-bottom: 15px;
-}
-
-.info-group p {
-    margin: 5px 0;
-    color: #495057;
-    line-height: 1.6;
-}
-
-.info-group .label {
+  }
+  
+  .sale-info ul li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 5px;
+  }
+  
+  /* "자세히 보기" 버튼 */
+  .sale-info a {
     display: inline-block;
-    width: 80px;
-    color: #6c757d;
-    font-weight: 500;
+    padding-top: 15px;
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+  }
+  
+  .sale-info a:hover {
+    color: #0056b3;
+  }
+
+.sale-container .more-btn a{
+    display: block;
+    padding: 1em;
+    margin-top: 20px;
+    font-size: 20px;
+    position: absolute;
+    border-top: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
-.info-group .value {
-    color: #212529;
-    font-weight: 500;
+.found-section h2{
+    padding: 2em;
+    font-size: 40px;
 }
 
-.info-group .day {
-    display: inline-block;
-    width: 100px;
-    color: #495057;
-    font-weight: 500;
-}
-
-.info-group .time {
-    color: #212529;
-}
-
-.new-development {
+/* 찾아오시는 길 섹션 스타일 */
+.found-section {
+    text-align: center;
+    padding: 40px 0;
     background-color: #f8f9fa;
-    padding: 60px 0;
   }
   
-  .development-flex {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  .found-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
   }
   
-  .development-card {
+  .t-map-section {
     display: flex;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    justify-content: center;
+    align-items: center;
   }
   
-  .development-img {
-    width: 400px;
-    height: 300px;
-    overflow: hidden;
-  }
-  
-  .development-img img {
+  .t-map-wrap {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 1000px;
   }
   
-  .development-info {
-    flex: 1;
-    padding: 30px;
-  }
-  
-  .development-info h4 {
-    font-size: 24px;
-    color: #212529;
-    margin: 0 0 15px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e9ecef;
-  }
-  
-  .location {
-    color: #6c757d;
-    font-size: 16px;
-    margin-bottom: 20px;
-  }
-  
-  .details {
-    list-style: none;
-    padding: 0;
-    margin: 0 0 25px;
-  }
-  
-  .details li {
-    margin-bottom: 15px;
-  }
-  
-  .development-status {
-    display: inline-block;
-    background-color: #00AC47;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-weight: 500;
+  .t-map {
+    width: 100%;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   }
 
-/* 반응형 스타일 */
 
-/* Responsive Styles */
-@media (max-width: 1240px) {
-    .hero-section {
-        height: 40vh;
+
+@media screen and (max-width:1600px){
+    .hero-img{
+        background-position: left 0 bottom -100px;
+    }
+}
+@media screen and (max-width: 1450px){
+    .hero-container{
+        height: 500px;
+
     }
 
-    .hero-content h2 {
-        font-size: 2em;
+    .hero-text-wrap{
+        top: 15%;
     }
 
-    .hero-content a {
+    .hero-text-wrap h2{
+        font-size: 3.5em;
+        font-weight: 800;
+    }
+    
+    .hero-text-wrap p{
+        font-size: 1.75em;
+    }
+    
+    .hero-text-wrap a{
+        font-size: 1.25em;
+    }
+
+    /* 분양 */
+    .sale-list {
+        flex-direction: column;
+        gap: 20px;
+      }
+}
+
+@media  screen and (max-width: 1200px) {
+    .product-card{
+        height: 400px;
+    }
+    .product-wrap ul {        
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+
+    /* 광고 */
+
+    
+    .advertisement{
+        width: 95%;
+        height: 100px;
+    }
+    
+}
+
+@media screen and (max-width: 1150px){
+    .hero-container{
+        height: 400px;
+
+    }
+
+    .hero-text-wrap{
+        top: 10%;
+    }
+
+    .hero-text-wrap h2{
+        font-size: 2.7em;
+        font-weight: 800;
+    }
+    
+    .hero-text-wrap p{
+        font-size: 1.3em;
+    }
+    
+    .hero-text-wrap a{
         font-size: 1em;
     }
-
-
-    .search-bar {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .search-bar input,
-    .search-bar button {
-        width: 100%;
-        border-radius: 4px;
-    }
-
 }
 
-@media (max-width: 992px) {
-    .development-card {
-        flex-direction: column;
-      }
-      
-      .development-img {
-        width: 100%;
-        height: 250px;
-      }
-    
-    .company-container {
-        grid-template-columns: 1fr;
-    }
-
-    .office-map {
-        min-height: 300px;
-    }
-
-    .location-map {
-        min-height: 300px;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-section {
-        height: 30vh;
-    }
-
-    .hero-content h2 {
-        font-size: 24px;
-    }
-
-    .search-bar {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .search-bar input,
-    .search-bar button {
-        width: 100%;
-        border-radius: 4px;
-    }
-
-    .property-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-section {
-        width: 100%;
-        z-index: 997;
-        background: url(/homeweb2/images/home.jpg) no-repeat center center / cover;
-    }
-
-    .hero-section::before {
-        width: 100%;
-        height: 100%;
+@media screen and (max-width: 750px){
+    /* 메인 */
+    .hero-img-wrap::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
-        background: #00000050;
-    }
-
-    .hero-section .main-img-area{
-        display: none;
-    }
-
-    .hero-section h2 {
-        z-index: 999;
-    }
-
-    .main-content {
-        margin: 0 auto;
-        padding: 10px;
-        margin: 0;
-    }
-
-    .company-info {
-        padding: 40px 0;
-    }
-
-    .section-header {
-        margin-bottom: 30px;
-    }
-
-    .section-header h3 {
-        font-size: 24px;
-    }
-
-    .info-group {
-        padding: 20px;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* 어두운 반투명 배경 */
+        z-index: 1;
     }
     
+    .hero-img-wrap{
+        width: 100%;
+        z-index: -1;
+    }
+    .hero-text-wrap{
+        top: 5%;
+        left: 25%;
+        transform: translateX(-25%);
+        z-index: 3;
+    }
+    .hero-text-wrap h2,.hero-text-wrap p, .hero-text-wrap a{
+        color:white
+    }
+    /* 매물찾기 */
+
+    .found-product-container h2 {
+        font-size: 2rem;
+    }
+    
+    .product-wrap ul {
+        gap: 20px;
+    }
+    
+    .product-card {
+        height: 280px;
+    }
+    .product-card {
+        filter: grayscale(0%); 
+    }
+
+    .product-card {
+        transform: translateY(-10px);
+        filter: grayscale(0%);
+    
+    }
+    
+    
+    .product-card h3,
+    .product-card p {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+
+    .product-card::after {
+        opacity: 1;
+        right: 25px;
+    }
 }
 
-@media (max-width: 576px) {
-    .info-group ul li {
-        margin-bottom: 20px;
+@media screen and (max-width: 760px){
+    .hero-container{
+        height: 100vh;
+    }
+    .hero-img-wrap{
+        height: 100vh;
+        border-radius: 0;
     }
 
-    .info-group .label {
+    .hero-text-wrap{
+        top: 10%;
+        transform: translateY(-10%);
+    }
+    .hero-text-wrap h2{
+        font-size: 7vw;
+        font-weight: 700;
+    }
+    
+    .hero-text-wrap p{
+        font-size: 5vw;
+    }
+    
+    .hero-text-wrap a{
+        font-size: 4vw;
+    }
+
+    .delete-el{
         display: block;
-        margin-bottom: 5px;
     }
 
-    .info-group .day {
-        display: block;
-        margin-bottom: 5px;
-    }
-
-    .development-info {
-        padding: 20px;
+    .sale-card {
+        flex-direction: column;
+        align-items: start;
       }
-      
-      .development-info h4 {
-        font-size: 20px;
+    
+      .sale-img {
+        margin-bottom: 15px;
+        width: 100%;
+        height: 500px;
       }
 }
+
+
+@media (max-width: 480px) {
+    .found-product-container h2 {
+        font-size: 1.8rem;
+    }
+
+    .sale-img {
+        height: 300px;
+      }
+    
+    .product-card h3 {
+        font-size: 1.5rem;
+    }
+    
+    .product-card p {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* 애니메이션 */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideRight {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+  /* 모달 스타일 */

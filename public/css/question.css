@@ -1,0 +1,126 @@
+:root {
+    --primary-color: #007bff;
+    --success-color: #28a745;
+    --bg-light: #f8f9fa;
+    --spacing-sm: 10px;
+    --spacing-md: 20px;
+    --radius: 8px;
+    --transition: all 0.3s ease;
+  }
+  
+
+  .container {
+    width: 100%;
+    max-width: 800px;
+    margin: 100px auto;
+    padding: 0 15px;
+  }
+  
+  .info-box {
+    background-color: var(--bg-light);
+    padding: var(--spacing-md);
+    border-radius: var(--radius);
+    margin-bottom: var(--spacing-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  .info-box h2 {
+    margin: 0 0 var(--spacing-sm);
+    font-size: 1.25rem;
+  }
+  
+  .buyer,
+  .seller {
+    text-align: center;
+    padding: var(--spacing-md);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    color: white;
+    margin-bottom: var(--spacing-sm);
+    transition: var(--transition);
+  }
+  
+  .buyer {
+    background-color: var(--primary-color);
+  }
+  
+  .seller {
+    background-color: var(--success-color);
+  }
+  
+  .buyer:hover,
+  .seller:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .inquiry-link {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-top: var(--spacing-sm);
+    transition: var(--transition);
+  }
+  
+  .inquiry-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* 모바일 우선 접근법: 기본 스타일은 모바일용 */
+  
+  /* 태블릿 */
+  @media (min-width: 576px) {
+    .info-box h2 {
+      font-size: 1.5rem;
+    }
+    
+    .buyer,
+    .seller {
+      font-size: 1.125rem;
+    }
+  }
+  
+  /* 작은 데스크톱 */
+  @media (min-width: 768px) {
+    body {
+      padding: 24px;
+    }
+    
+    .container {
+      padding: 0 var(--spacing-md);
+    }
+    
+    .info-box {
+      padding: 30px;
+    }
+    
+    .buyer,
+    .seller {
+      padding: 30px;
+      font-size: 1.25rem;
+    }
+    
+    /* 양쪽 정렬을 위한 플렉스 레이아웃 */
+    .action-boxes {
+      display: flex;
+      gap: var(--spacing-md);
+    }
+    
+    .buyer,
+    .seller {
+      flex: 1;
+      margin-bottom: 0;
+    }
+  }
+  
+  /* 큰 데스크톱 */
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+    
+    .info-box {
+      padding: 40px;
+    }
+  }

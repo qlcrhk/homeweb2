@@ -1,0 +1,140 @@
+/* 기본 변수 정의 */
+:root {
+  --primary-color: #4a90e2;
+  --secondary-color: #f8f9fa;
+  --border-color: #e1e4e8;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+
+
+.map-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+}
+
+#map {
+  width: 100%;
+  height: 50vh;
+  order: 1;
+}
+
+#sidebar {
+  background: var(--secondary-color);
+  padding: 1em;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+  height: 50vh;
+  overflow-y: auto;
+  order: 2;
+}
+
+#propertyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.property-item {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 12px;
+  border-bottom: 1px solid var(--border-color);
+  transition: var(--transition);
+}
+
+.property-item:hover {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+.property-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius);
+}
+
+.property-info {
+  flex: 1;
+}
+
+.property-title {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.property-price {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.property-address {
+  font-size: 0.9em;
+  color: #666;
+  margin: 4px 0;
+}
+
+/* 태블릿/데스크톱 스타일 */
+@media (min-width: 768px) {
+  .map-container {
+    flex-direction: row;
+  }
+  
+  #map {
+    width: 70%;
+    height: 100vh;
+    order: 2;
+  }
+  
+  #sidebar {
+    width: 30%;
+    height: 100vh;
+    border-top: none;
+    border-left: 1px solid var(--border-color);
+    order: 1;
+  }
+}
+
+/* 다크 모드 지원 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --secondary-color: #222;
+    --border-color: #444;
+  }
+  
+  .property-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .property-title {
+    color: #eee;
+  }
+  
+  .property-address {
+    color: #bbb;
+  }
+}
+
+/* 애니메이션 효과 */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.property-item {
+  animation: fadeIn 0.3s ease-out;
+  animation-fill-mode: both;
+}
+
+.property-item:nth-child(2n) {
+  animation-delay: 0.1s;
+}
+
+.property-item:nth-child(3n) {
+  animation-delay: 0.2s;
+}
