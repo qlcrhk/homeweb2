@@ -8,8 +8,6 @@
   --transition: all 0.3s ease;
 }
 
-
-
 .map-container {
   display: flex;
   flex-direction: column;
@@ -42,21 +40,16 @@
 .property-item {
   display: flex;
   align-items: center;
-  gap: 1em;
-  padding: 12px;
-  border-bottom: 1px solid var(--border-color);
-  transition: var(--transition);
-}
-
-.property-item:hover {
-  background-color: rgba(0, 0, 0, 0.03);
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
 .property-image {
   width: 80px;
   height: 80px;
   object-fit: cover;
-  border-radius: var(--radius);
+  border-radius: 8px;
 }
 
 .property-info {
@@ -78,6 +71,36 @@
   color: #666;
   margin: 4px 0;
 }
+
+/* 필터 버튼 스타일 */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5em;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.filter-btn:hover {
+  background: #357ABD;
+}
+
+.filter-btn.active {
+  background: #2c6cb0;
+  box-shadow: var(--shadow);
+  transform: scale(1.05);
+}
+
 
 /* 태블릿/데스크톱 스타일 */
 @media (min-width: 768px) {

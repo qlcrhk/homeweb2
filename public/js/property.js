@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         if (!token) {
             alert("❌ 로그인이 필요합니다.");
             window.location.href = "/login";
-            return;
+            return false;
         }
 
         try {
@@ -20,17 +20,25 @@ document.addEventListener("DOMContentLoaded", async () => {
             });
 
             const data = await response.json();
+            if (!response.ok) throw new Error(data.message || "인증 실패");
+
             if (!data.isAdmin) {
                 alert("❌ 관리자만 접근 가능합니다.");
                 window.location.href = "/";
+                return false;
             }
+
+            return true;
         } catch (error) {
             console.error(error);
+            alert("❌ 인증 오류가 발생했습니다.");
             window.location.href = "/";
+            return false;
         }
     }
 
-    checkAdmin(); // 🚀 페이지 로드 시 관리자 확인
+    // 🚀 관리자 체크 후 실행
+    if (!(await checkAdmin())) return;
 
     // ✅ 이미지 입력 필드 추가 (최대 4개 제한)
     addImageBtn.addEventListener("click", () => {
@@ -52,11 +60,22 @@ document.addEventListener("DOMContentLoaded", async () => {
         propertyForm.addEventListener("submit", async (event) => {
             event.preventDefault();
 
-            const title = document.getElementById("title").value;
-            const address = document.getElementById("address").value;
-            const price = document.getElementById("price").value;
+            const title = document.getElementById("title").value.trim();
+            const address = document.getElementById("address").value.trim();
+            const price = document.getElementById("price").value.trim();
             const propertyType = document.getElementById("property-type").value;
-            const description = document.getElementById("description").value;
+            const description = document.getElementById("description").value.trim();
+
+            // 🔸 필수 입력값 검증
+            if (!title || !address || !price || !propertyType || !description) {
+                alert("❌ 모든 필수 입력란을 채워주세요.");
+                return;
+            }
+
+            if (isNaN(price) || Number(price) <= 0) {
+                alert("❌ 가격은 숫자로 입력해야 합니다.");
+                return;
+            }
 
             const images = [];
             document.querySelectorAll(".image-url").forEach(input => {
@@ -74,13 +93,13 @@ document.addEventListener("DOMContentLoaded", async () => {
                 });
 
                 const data = await response.json();
-                if (!response.ok) throw new Error(data.message);
+                if (!response.ok) throw new Error(data.message || "매물 등록 실패");
 
                 alert("✅ 매물이 등록되었습니다!");
                 window.location.href = "/";
             } catch (error) {
                 console.error(error);
-                alert("❌ 매물 등록 실패!");
+                alert(`❌ 매물 등록 실패! ${error.message}`);
             }
         });
     }

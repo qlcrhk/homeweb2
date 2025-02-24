@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>로그인 - 살려줘부동산</title>
-    <link rel="stylesheet" href="/public/css/common.css" />
-    <link rel="stylesheet" href="/public/css/login.css" />
-    <link rel="stylesheet" href="/public/css/navAndFooter.css" />
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
+    <link rel="stylesheet" href="/css/navAndFooter.css" />
   </head>
   <body>
     <header class="header">
       <h1 class="logo">살려줘부동산</h1>
 
-      <button class="mobile-menu-btn" aria-label="메뉴 열기">
+      <button class="mobile-menu-btn" aria-label="메뉴 열기" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
@@ -48,7 +48,7 @@
           <input type="email" id="email" required />
 
           <label for="password">비밀번호</label>
-          <input type="password" id="password" required />
+          <input type="password" id="password" pattern=".{8,}" required />
 
           <button type="submit">회원가입</button>
         </form>

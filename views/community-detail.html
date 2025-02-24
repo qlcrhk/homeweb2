@@ -1,35 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게시글 상세보기</title>
-    <link rel="stylesheet" href="/styles.css">
-</head>
-<body>
-    <header>
-        <h1>게시글 상세보기</h1>
-    </header>
-    <main>
-        <article>
-            <h2 id="post-title">제목</h2>
-            <p id="post-author">작성자: </p>
-            <p id="post-date">작성일: </p>
-            <p id="post-content">내용</p>
-        </article>
-        
-        <div id="actions">
-            <button id="edit-button">수정</button>
-            <button id="delete-button">삭제</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>새 글 작성</title>
+    <link rel="stylesheet" href="/css/community.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>새 글 작성</h1>
+      <form id="new-post-form" method="POST" action="/api/community">
+        <div class="form-group">
+          <label for="title">제목</label>
+          <input type="text" id="title" name="title" placeholder="제목을 입력하세요" required />
         </div>
-        
-        <section id="comments">
-            <h3>댓글</h3>
-            <ul id="comment-list"></ul>
-            <textarea id="comment-input" placeholder="댓글을 입력하세요"></textarea>
-            <button id="comment-submit">댓글 등록</button>
-        </section>
+        <div class="form-group">
+          <label for="content">내용</label>
+          <textarea id="content" name="content" rows="10" placeholder="내용을 입력하세요" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="author">작성자</label>
+          <input type="text" id="author" name="author" placeholder="작성자 이름" required />
+        </div>
+        <button type="submit">작성 완료</button>
+      </form>
     </main>
-    <script src="/js/community-detail.js"></script>
-</body>
+    <script src="/js/community-new.js"></script>
+  </body>
 </html>

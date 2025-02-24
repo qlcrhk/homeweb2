@@ -81,8 +81,8 @@ document.addEventListener("DOMContentLoaded", () => {
     properties.forEach((property, index) => {
         console.log(`📌 사이드바 매물 ${index + 1}:`, property);
 
-        if (!property.title || !property._id) {
-            console.warn(`⚠️ 매물 ${index + 1}에 제목 또는 ID 정보가 없습니다.`);
+        if (!property.title) {
+            console.warn(`⚠️ 매물 ${index + 1}에 제목 정보가 없습니다.`);
             return;
         }
 
@@ -92,26 +92,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const price = property.price ? `${property.price.toLocaleString()}만원` : "가격 정보 없음";
         const address = property.address ? property.address : "주소 정보 없음";
-        const detailPageUrl = `/property/detail/${property._id}`; // 상세페이지 URL
 
         const listItem = document.createElement("li");
         listItem.className = "property-item";
 
         listItem.innerHTML = `
-            <a href="${detailPageUrl}" class="property-link">
-                <div class="property-card">
-                    <img src="${imageUrl}" alt="매물 이미지" class="property-image">
-                    <div class="property-info">
-                        <h3>${property.title}</h3>
-                        <p><strong>가격:</strong> ${price}</p>
-                        <p><strong>주소:</strong> ${address}</p>
-                    </div>
+            <div class="property-card">
+                <img src="${imageUrl}" alt="매물 이미지" class="property-image">
+                <div class="property-info">
+                    <h3>${property.title}</h3>
+                    <p><strong>가격:</strong> ${price}</p>
+                    <p><strong>주소:</strong> ${address}</p>
                 </div>
-            </a>
+            </div>
         `;
 
         listContainer.appendChild(listItem);
     });
-}
-
+  }
 });

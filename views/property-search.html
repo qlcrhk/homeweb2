@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="/css/map.css" />
 
     <script src="/js/auth.js"></script>
-    <script src="/js/login.js"></script>
   </head>
   <body>
     <header class="header">
@@ -59,15 +58,13 @@
 
         <div class="map-container">
           <div id="sidebar">
-            <div class="search-bar">
-              <select id="propertyType">
-                <option value="all">전체</option>
-                <option value="아파트">아파트</option>
-                <option value="상가">상가</option>
-                <option value="원룸">원룸</option>
-              </select>
-              <button id="searchBtn">검색</button>
-            </div>
+            <div class="filter-buttons">
+              <button class="filter-btn" data-type="all">전체</button>
+              <button class="filter-btn" data-type="apartment">아파트</button>
+              <button class="filter-btn" data-type="one-room">원룸</button>
+              <button class="filter-btn" data-type="store">상가</button>
+          </div>
+          
             <ul id="propertyList" class="property-list"></ul>
           </div>
           <!-- 지도를 표시할 div 입니다 -->

@@ -1,0 +1,142 @@
+/* 기본 리셋 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* 본문 스타일 */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  /* 헤더 */
+  header {
+    background-color: #2563eb;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  /* 메인 영역 중앙 정렬 */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* 글쓰기 링크 스타일 */
+  section a {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #2563eb;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  section a:hover {
+    background-color: #1e40af;
+  }
+  
+  /* 게시글 목록 섹션 */
+  #post-list {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  /* 게시글 목록 제목 */
+  #post-list h2 {
+    margin-bottom: 15px;
+  }
+  
+  /* 게시글 목록 ul 스타일 */
+  #posts {
+    list-style: none;
+  }
+  
+  /* 게시글 항목 스타일 */
+  #posts li {
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* 마지막 항목은 border 제거 */
+  #posts li:last-child {
+    border-bottom: none;
+  }
+  
+  /* 게시글 정보 영역 */
+  .post-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* 게시글 제목 */
+  .post-info strong {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+  }
+  
+  /* 작성자 표시 */
+  .post-info span {
+    font-size: 0.9rem;
+    color: #777;
+  }
+  
+  /* 수정/삭제 버튼 영역 */
+  .post-actions {
+    display: flex;
+    gap: 5px;
+  }
+  
+  /* 버튼 기본 스타일 */
+  .post-actions button {
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* 수정 버튼 스타일 */
+  .post-actions .edit-btn {
+    background-color: #ffd700;
+    color: #333;
+  }
+  
+  .post-actions .edit-btn:hover {
+    background-color: #ffc107;
+  }
+  
+  /* 삭제 버튼 스타일 */
+  .post-actions .delete-btn {
+    background-color: #ff4d4d;
+    color: #fff;
+  }
+  
+  .post-actions .delete-btn:hover {
+    background-color: #ff1a1a;
+  }
+  
+  /* 게시글이 없을 때 */
+  #no-posts {
+    text-align: center;
+    font-size: 1rem;
+    color: #777;
+    padding: 20px 0;
+  }
+  

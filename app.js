@@ -14,6 +14,7 @@ const Property = require("./models/Property");
 const authRoutes = require("./routes/authRoutes");
 const propertyRoutes = require("./routes/propertyRoutes");
 const communityRoutes = require("./routes/communityRoutes"); // 커뮤니티 라우트 추가
+const communityRouter = require("./routes/communityRoutes");
 
 const app = express();
 
@@ -56,11 +57,25 @@ app.use(express.static(path.join(__dirname, "public")));
 // ✅ HTML 파일 제공
 app.get("/", (req, res) => res.sendFile(path.join(__dirname, "views", "index.html")));
 
-const pages = ["login", "signup", "property-upload", "property-search", "question", "community", "community-write", "community-detail"];
+const pages = ["login", "signup", "property-upload", "property-search", "question", "community", "community-write"];
 pages.forEach((page) => {
   app.get(`/${page}`, (req, res) => res.sendFile(path.join(__dirname, "views", `${page}.html`)));
 });
 
+app.get("/property/detail/:id", async (req, res) => {
+  try {
+      const property = await Property.findById(req.params.id);
+      console.log(property);
+      if (!property) {
+          return res.status(404).json({ message: "관리자에게 문의요망." });
+      }
+      // HTML 파일을 보내기만 하므로 JSON 데이터는 전송하지 않습니다.
+      res.sendFile(path.join(__dirname, "views", "property-detail.html"));
+  } catch (error) {
+      console.error("매물 상세 조회 오류:", error);
+      res.status(500).json({ message: "서버 오류", error: error.message });
+  }
+});
 // ✅ Kakao API Key 제공
 app.get("/api/kakao-key", (req, res) => {
   res.json({ key: process.env.KAKAO_JS_API });
@@ -77,7 +92,7 @@ app.get("/api/properties/search", async (req, res) => {
 // ✅ API 라우트 설정
 app.use("/api/auth", authRoutes);
 app.use("/api/properties", propertyRoutes);
-app.use("/api/community", communityRoutes); // 커뮤니티 API 추가
+app.use("/api/community", communityRouter);
 
 // ✅ 404 처리
 app.use((req, res) => res.status(404).json({ message: "❌ 페이지를 찾을 수 없습니다." }));
